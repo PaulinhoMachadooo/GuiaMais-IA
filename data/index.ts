@@ -7,7 +7,6 @@ export const categories = [
         id: '1',
         name: 'Restaurante Sabor & Arte',
         category: 'Restaurantes',
-        rating: 4.8,
         images: [
           'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500',
           'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=500',
@@ -15,9 +14,13 @@ export const categories = [
         ],
         address: 'Rua das Flores, 123',
         phone: '(11) 99999-9999',
-        email: 'contato@saborarte.com',
         hours: 'Seg-Sex: 11h às 23h\nSáb-Dom: 11h às 00h',
-        description: 'Restaurante especializado em gastronomia contemporânea, oferecendo uma experiência única em um ambiente acolhedor e sofisticado.',
+        socialMedia: [
+          { type: 'instagram', url: 'https://instagram.com/saborarte' },
+          { type: 'facebook', url: 'https://facebook.com/saborarte' },
+          { type: 'whatsapp', url: 'https://wa.me/5511999999999' },
+          { type: 'maps', url: 'https://maps.app.goo.gl/tC1CcN4GJT5eKZ3t6'}
+        ]
       }
     ]
   },
@@ -29,7 +32,6 @@ export const categories = [
         id: '2',
         name: 'Supermercado Economia',
         category: 'Supermercados',
-        rating: 4.5,
         images: [
           'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=500',
           'https://images.unsplash.com/photo-1604719312566-8912e9c8a213?w=500',
@@ -40,6 +42,11 @@ export const categories = [
         email: 'contato@economia.com',
         hours: 'Seg-Dom: 7h às 22h',
         description: 'Supermercado completo com grande variedade de produtos e preços competitivos.',
+        socialMedia: [
+          { type: 'instagram', url: 'https://instagram.com/economia' },
+          { type: 'facebook', url: 'https://facebook.com/economia' },
+          { type: 'linkedin', url: 'https://linkedin.com/company/economia' }
+        ]
       }
     ]
   },
@@ -51,7 +58,6 @@ export const categories = [
         id: '3',
         name: 'Farmácia Saúde Total',
         category: 'Farmácias',
-        rating: 4.7,
         images: [
           'https://images.unsplash.com/photo-1586015555751-63c4bd074e8d?w=500',
           'https://images.unsplash.com/photo-1631549916768-4119b4123a21?w=500',
@@ -62,6 +68,12 @@ export const categories = [
         email: 'contato@saudetotal.com',
         hours: 'Seg-Dom: 24h',
         description: 'Farmácia com atendimento 24 horas, oferecendo medicamentos, cosméticos e produtos de higiene pessoal.',
+        socialMedia: [
+          { type: 'instagram', url: 'https://instagram.com/saudetotal' },
+          { type: 'facebook', url: 'https://facebook.com/saudetotal' },
+          { type: 'youtube', url: 'https://youtube.com/saudetotal' },
+          { type: 'whatsapp', url: 'https://wa.me/5511977777777' }
+        ]
       }
     ]
   },
@@ -73,7 +85,6 @@ export const categories = [
         id: '4',
         name: 'Moda & Estilo',
         category: 'Lojas de Roupas',
-        rating: 4.6,
         images: [
           'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=500',
           'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=500',
@@ -84,13 +95,18 @@ export const categories = [
         email: 'contato@modaestilo.com',
         hours: 'Seg-Sáb: 10h às 22h\nDom: 14h às 20h',
         description: 'Loja de roupas com as últimas tendências da moda, atendendo público masculino e feminino.',
+        socialMedia: [
+          { type: 'instagram', url: 'https://instagram.com/modaestilo' },
+          { type: 'facebook', url: 'https://facebook.com/modaestilo' },
+          { type: 'tel', url: 'https://pinterest.com/modaestilo' },
+          { type: 'maps', url: 'https://tiktok.com/@modaestilo' }
+        ]
       }
     ]
   }
 ];
 
 export const carouselImages = [
-  'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500',
-  'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500',
-  'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500'
+  'https://abrir.link/MEYHE',
+  'https://abrir.link/WFNbH',
 ];

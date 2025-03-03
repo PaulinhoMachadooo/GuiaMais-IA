@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable, Dimensions, Animated } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable, Dimensions, Animated, FlatList } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
-import { Clock, MapPin, Phone, Mail, ArrowLeft } from 'lucide-react-native';
+import { Clock, MapPin, Phone, Mail, ArrowLeft, Instagram, Facebook, Twitter, Linkedin, Youtube, MessageCircle } from 'lucide-react-native';
 import { useRef, useState, useEffect } from 'react';
 import { categories } from '../../data';
 
@@ -109,6 +109,51 @@ export default function DetailsScreen() {
     );
   };
 
+  // Function to check if data exists and is not empty
+  const hasData = (data) => {
+    return data !== undefined && data !== null && data !== '';
+  };
+
+  // Function to render social media icons
+  const renderSocialMediaIcon = (type, url) => {
+    let icon;
+    let color;
+
+    switch (type) {
+      case 'instagram':
+        icon = <Instagram size={50} color="#E1306C" />;
+        color = '#E1306C';
+        break;
+      case 'facebook':
+        icon = <Facebook size={24} color="#1877F2" />;
+        color = '#1877F2';
+        break;
+      case 'whatsapp':
+        icon = <MessageCircle size={24} color="#25D366" />;
+        color = '#25D366';
+        break;
+      case 'tel':
+        icon = <Image source={require("../../assets/images/Tel.png")}  style={{ width: 24, height: 24 }} />;
+        color = '#000000';
+        break;
+      case 'maps':
+        icon = <Image source={require("../../assets/images/Maps.png")} style={{ width: 24, height: 24 }} />;
+        color = '#25D366';
+        break;
+      default:
+        return null;
+    }
+
+    return (
+      <Pressable
+        key={type}
+        style={[styles.socialIcon, { borderColor: color }]}
+        onPress={() => Linking.openURL(url)}>
+        {icon}
+      </Pressable>
+    );
+  };
+
   if (!business) {
     return (
       <View style={styles.container}>
@@ -120,7 +165,7 @@ export default function DetailsScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Pressable 
+      <Pressable 
           onPress={() => router.push({
             pathname: '/businesses',
             params: { categoryId: categoryId }
@@ -134,60 +179,83 @@ export default function DetailsScreen() {
         style={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.carouselContainer}>
-          <Animated.FlatList
-            ref={flatListRef}
-            data={business.images}
-            renderItem={renderItem}
-            keyExtractor={(_, index) => index.toString()}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            onScroll={handleScroll}
-            onMomentumScrollEnd={handleMomentumScrollEnd}
-            scrollEventThrottle={16}
-          />
-          {renderDots()}
-        </View>
+        {business.images && business.images.length > 0 && (
+          <View style={styles.carouselContainer}>
+            <Animated.FlatList
+              ref={flatListRef}
+              data={business.images}
+              renderItem={renderItem}
+              keyExtractor={(_, index) => index.toString()}
+              horizontal
+              pagingEnabled
+              showsHorizontalScrollIndicator={false}
+              onScroll={handleScroll}
+              onMomentumScrollEnd={handleMomentumScrollEnd}
+              scrollEventThrottle={16}
+            />
+            {renderDots()}
+          </View>
+        )}
         
         <View style={styles.content}>
-          <Text style={styles.name}>{business.name}</Text>
-          <Text style={styles.category}>{business.category}</Text>
+          {hasData(business.name) && (
+            <Text style={styles.name}>{business.name}</Text>
+          )}
           
-          <View style={styles.ratingContainer}>
-            <Text style={styles.rating}>★ {business.rating}</Text>
-          </View>
 
-          <Text style={styles.description}>{business.description}</Text>
+          {business.socialMedia && business.socialMedia.length > 0 && (
+            <View style={styles.socialMediaContainer}>
+              <FlatList
+                data={business.socialMedia}
+                renderItem={({ item }) => renderSocialMediaIcon(item.type, item.url)}
+                keyExtractor={(item) => item.type}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.socialMediaList}
+              />
+            </View>
+          )}
+
+          {hasData(business.description) && (
+            <Text style={styles.description}>{business.description}</Text>
+          )}
 
           <View style={styles.infoSection}>
-            <View style={styles.infoItem}>
-              <MapPin size={20} color="#0891b2" />
-              <Text style={styles.infoText}>{business.address}</Text>
-            </View>
+            {hasData(business.address) && (
+              <View style={styles.infoItem}>
+                <MapPin size={20} color="#0891b2" />
+                <Text style={styles.infoText}>{business.address}</Text>
+              </View>
+            )}
 
-            <View style={styles.infoItem}>
-              <Phone size={20} color="#0891b2" />
-              <Text 
-                style={[styles.infoText, styles.link]}
-                onPress={() => Linking.openURL(`tel:${business.phone}`)}>
-                {business.phone}
-              </Text>
-            </View>
+            {hasData(business.phone) && (
+              <View style={styles.infoItem}>
+                <Phone size={20} color="#0891b2" />
+                <Text 
+                  style={[styles.infoText, styles.link]}
+                  onPress={() => Linking.openURL(`tel:${business.phone}`)}>
+                  {business.phone}
+                </Text>
+              </View>
+            )}
 
-            <View style={styles.infoItem}>
-              <Mail size={20} color="#0891b2" />
-              <Text 
-                style={[styles.infoText, styles.link]}
-                onPress={() => Linking.openURL(`mailto:${business.email}`)}>
-                {business.email}
-              </Text>
-            </View>
+            {hasData(business.email) && (
+              <View style={styles.infoItem}>
+                <Mail size={20} color="#0891b2" />
+                <Text 
+                  style={[styles.infoText, styles.link]}
+                  onPress={() => Linking.openURL(`mailto:${business.email}`)}>
+                  {business.email}
+                </Text>
+              </View>
+            )}
 
-            <View style={styles.infoItem}>
-              <Clock size={20} color="#0891b2" />
-              <Text style={styles.infoText}>{business.hours}</Text>
-            </View>
+            {hasData(business.hours) && (
+              <View style={styles.infoItem}>
+                <Clock size={20} color="#0891b2" />
+                <Text style={styles.infoText}>{business.hours}</Text>
+              </View>
+            )}
           </View>
         </View>
       </ScrollView>
@@ -269,18 +337,29 @@ const styles = StyleSheet.create({
     color: '#0891b2',
     marginBottom: 8,
   },
-  ratingContainer: {
-    backgroundColor: '#fef3c7',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
-    alignSelf: 'flex-start',
+  socialMediaContainer: {
     marginBottom: 16,
   },
-  rating: {
-    color: '#d97706',
-    fontWeight: '600',
-    fontSize: 16,
+  socialMediaList: {
+    paddingVertical: 8,
+  },
+  socialIcon: {
+    width: 60,
+    height: 60,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+    backgroundColor: 'white',
+    borderWidth: 1,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 2,
   },
   description: {
     fontSize: 16,

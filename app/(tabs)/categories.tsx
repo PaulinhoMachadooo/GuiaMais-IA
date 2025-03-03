@@ -95,8 +95,9 @@ const styles = StyleSheet.create({
     paddingTop: 8,
   },
   categoryItem: {
-    backgroundColor: 'white',
+    backgroundColor: '#112342',
     padding: 16,
+    alignItems:'center',
     borderRadius: 12,
     marginBottom: 12,
     shadowColor: '#000',
@@ -109,9 +110,9 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   categoryName: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: '600',
-    color: '#0f172a',
+    color: '#FFF',
     marginBottom: 4,
   },
   categoryCount: {
