@@ -121,23 +121,23 @@ export default function DetailsScreen() {
 
     switch (type) {
       case 'instagram':
-        icon = <Instagram size={50} color="#E1306C" />;
+        icon = <Instagram size={35} color="#E1306C" />;
         color = '#E1306C';
         break;
       case 'facebook':
-        icon = <Facebook size={24} color="#1877F2" />;
+        icon = <Facebook size={35} color="#1877F2" />;
         color = '#1877F2';
         break;
       case 'whatsapp':
-        icon = <MessageCircle size={24} color="#25D366" />;
+        icon = <MessageCircle size={35} color="#25D366" />;
         color = '#25D366';
         break;
       case 'tel':
-        icon = <Image source={require("../../assets/images/Tel.png")}  style={{ width: 24, height: 24 }} />;
+        icon = <Image source={require("../../assets/images/Tel.png")}  style={{ width: 35, height: 35 }} />;
         color = '#000000';
         break;
       case 'maps':
-        icon = <Image source={require("../../assets/images/Maps.png")} style={{ width: 24, height: 24 }} />;
+        icon = <Image source={require("../../assets/images/Maps.png")} style={{ width: 35, height: 35 }} />;
         color = '#25D366';
         break;
       default:
@@ -313,7 +313,7 @@ const styles = StyleSheet.create({
     height: 8,
     width: 8,
     borderRadius: 4,
-    backgroundColor: 'white',
+    backgroundColor: '#112342',
     marginHorizontal: 4,
     shadowColor: '#000',
     shadowOffset: {
