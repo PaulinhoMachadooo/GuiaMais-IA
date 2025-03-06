@@ -12,7 +12,7 @@ export default function HomeScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef(null);
   const autoPlay = true;
-  const autoPlayInterval = 1500;
+  const autoPlayInterval = 3500;
 
   useEffect(() => {
     let interval;

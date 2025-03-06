@@ -132,10 +132,6 @@ export default function DetailsScreen() {
         icon = <MessageCircle size={35} color="#25D366" />;
         color = '#25D366';
         break;
-      case 'tel':
-        icon = <Image source={require("../../assets/images/Tel.png")}  style={{ width: 35, height: 35 }} />;
-        color = '#000000';
-        break;
       case 'maps':
         icon = <Image source={require("../../assets/images/Maps.png")} style={{ width: 35, height: 35 }} />;
         color = '#25D366';
@@ -220,7 +216,22 @@ export default function DetailsScreen() {
             <Text style={styles.description}>{business.description}</Text>
           )}
 
+          
+
           <View style={styles.infoSection}>
+
+            
+            {hasData(business.phone) && (
+              <View style={styles.infoItem}>
+                <Phone size={35} color="#0891b2" />
+                <Text 
+                  style={[styles.infoPhoneText, styles.link]}
+                  onPress={() => Linking.openURL(`tel:${business.phone}`)}>
+                  {business.phone}
+                </Text>
+              </View>
+            )}
+
             {hasData(business.address) && (
               <View style={styles.infoItem}>
                 <MapPin size={20} color="#0891b2" />
@@ -228,16 +239,6 @@ export default function DetailsScreen() {
               </View>
             )}
 
-            {hasData(business.phone) && (
-              <View style={styles.infoItem}>
-                <Phone size={20} color="#0891b2" />
-                <Text 
-                  style={[styles.infoText, styles.link]}
-                  onPress={() => Linking.openURL(`tel:${business.phone}`)}>
-                  {business.phone}
-                </Text>
-              </View>
-            )}
 
             {hasData(business.email) && (
               <View style={styles.infoItem}>
@@ -382,6 +383,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#334155',
     flex: 1,
+  },
+  infoPhoneText:{
+    fontSize: 20,
   },
   link: {
     color: '#0891b2',
