@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, FlatList, Pressable, Image } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
-import { categories } from '../../data';
+import { categories } from '../data/index';
 
 export default function BusinessesScreen() {
   const router = useRouter();
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f4f4f5',
+    width:"auto",
   },
   header: {
     flexDirection: 'row',
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
   },
   categoryTitle: {
     marginTop: 30,
-    fontSize: 24,
+    fontSize: 15,
     fontWeight: '600',
     color: '#0f172a',
   },

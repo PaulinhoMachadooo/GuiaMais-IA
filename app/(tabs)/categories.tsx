@@ -69,44 +69,46 @@ export default function CategoriesScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchContainer}>
-        <Search size={20} color="#64748b" style={styles.searchIcon} />
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Buscar estabelecimentos..."
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-          placeholderTextColor="#94a3b8"
-        />
-        {searchQuery.length > 0 && (
-          <Pressable onPress={clearSearch} style={styles.clearButton}>
-            <X size={20} color="#64748b" />
-          </Pressable>
-        )}
-      </View>
+    <View style={{flex:1, width:"auto", alignItems:"center" }}>
+      <View style={styles.container}>
+        <View style={styles.searchContainer}>
+          <Search size={20} color="#64748b" style={styles.searchIcon} />
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Buscar estabelecimentos..."
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholderTextColor="#94a3b8"
+          />
+          {searchQuery.length > 0 && (
+            <Pressable onPress={clearSearch} style={styles.clearButton}>
+              <X size={20} color="#64748b" />
+            </Pressable>
+          )}
+        </View>
 
-      <FlatList
-        data={filteredCategories}
-        renderItem={renderCategory}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.listContainer}
-        showsVerticalScrollIndicator={false}
-        ListEmptyComponent={
-          <View style={styles.emptyContainer}>
-            <Text style={styles.emptyText}>Nenhum resultado encontrado</Text>
-            <Text style={styles.emptySubtext}>Tente buscar por outros termos</Text>
-          </View>
-        }
-      />
+        <FlatList
+          data={filteredCategories}
+          renderItem={renderCategory}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.listContainer}
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={
+            <View style={styles.emptyContainer}>
+              <Text style={styles.emptyText}>Nenhum resultado encontrado</Text>
+              <Text style={styles.emptySubtext}>Tente buscar por outros termos</Text>
+            </View>
+          }
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f4f4f5',
+    flex:1,
+    width:"90%",
   },
   searchContainer: {
     flexDirection: 'row',

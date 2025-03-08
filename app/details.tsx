@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable, Dimensio
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Clock, MapPin, Phone, Mail, ArrowLeft, Instagram, Facebook, Twitter, Linkedin, Youtube, MessageCircle } from 'lucide-react-native';
 import { useRef, useState, useEffect } from 'react';
-import { categories } from '../../data';
+import { categories } from '../data/index';
 
 const { width } = Dimensions.get('window');
 
@@ -133,7 +133,7 @@ export default function DetailsScreen() {
         color = '#25D366';
         break;
       case 'maps':
-        icon = <Image source={require("../../assets/images/Maps.png")} style={{ width: 35, height: 35 }} />;
+        icon = <Image source={require("../assets/images/Maps.png")} style={{ width: 35, height: 35 }} />;
         color = '#25D366';
         break;
       default:

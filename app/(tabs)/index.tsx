@@ -103,14 +103,14 @@ export default function HomeScreen() {
   const navigateToRestaurants = () => {
     router.push({
       pathname: '/businesses',
-      params: { categoryId: '1' } // ID for Restaurants category
+      params: { categoryId: '271' } // ID for Restaurants category
     });
   };
 
   const navigateToBebida = () => {
     router.push({
       pathname: '/businesses',
-      params: { categoryId: '2' } // ID for Restaurants category
+      params: { categoryId: '161' } // ID for Restaurants category
     });
   };
 
@@ -290,9 +290,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   carouselImage: {
-    width: width - 32,
+    width: width - 50,
     height: 250,
     borderRadius: 12,
+    borderWidth: 0.5,
+    borderColor: "#CFCFCF",
   },
   dotsContainer: {
     flexDirection: 'row',
