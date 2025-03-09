@@ -13,7 +13,9 @@ export const categories = [
         ],
         address: 'Rua das Flores, 123',
         phone: '+55 15996524975',
+        tel: '15 99652-4975',
         hours: 'Seg-Sex: 11h às 23h\nSáb-Dom: 11h às 00h',
+        description: 'Cuidamos do seu animalzinho.',
         socialMedia: [
           { type: 'instagram', url: 'https://instagram.com/saborarte' },
           { type: 'facebook', url: 'https://facebook.com/saborarte' },
@@ -28,6 +30,7 @@ export const categories = [
   id: '2', 
     name: 'Açougue', 
     businesses: [
+      
      
     ]
   },
@@ -217,6 +220,25 @@ export const categories = [
     id: '271',
     name: "Comida",
     businesses: [
+      {
+        id: '2711',
+        name: 'Pizzaria Surreal',
+        images: [
+          'https://encurtador.com.br/VMqyc',
+        ],
+        address: 'Rua Newton Prado 535',
+        phone: '+55 15996552341',
+        tel: '15 1599655-2341',
+        hours: 'Seg-Sex: 19h às 23h\nSáb: 19h às 23h\nDom: 19h às 23h',
+        description: 'Um sabor Surreal.',
+        socialMedia: [
+          { type: 'instagram', url: 'https://www.instagram.com/pizzariasurreall?igsh=cDFxdzZ2ZnJ4dWp4' },
+          { type: 'facebook', url: 'https://www.facebook.com/share/18ZD5hN5hh/' },
+          { type: 'whatsapp', url: 'https://wa.me/5515996552341' },
+          { type: 'maps', url: 'https://maps.app.goo.gl/tC1CcN4GJT5eKZ3t6'},
+          
+        ]
+      }
      
     ]
   },
@@ -245,7 +267,30 @@ export const categories = [
     id: '31',
     name: "Doces e Salgados",
     businesses: [
-     
+      {
+        id: '311',
+        name: 'Jô Bolos',
+        images: [
+          'https://encurtador.com.br/86GAI',
+          'https://encurtador.com.br/dPgn6',
+          'https://encurtador.com.br/tN4d3',
+        ],
+        address: '',
+        phone: '+55 15991537174',
+        phone2: '+55 15996541847',
+        tel: '15 99153-7174',
+        tel2: '15 99654-1847',
+        hours: 'Seg-Sex: 9h às 18h\nSáb: 9h às 18h\nDom: 9h às 12h',
+        description: 'Toda hora é a hora perfeita',
+        socialMedia: [
+          { type: 'instagram', url: 'https://www.instagram.com/joscivania_bolos?utm_source=qr&igsh=MWY0dGE0MzZxdWowZw==' },
+          { type: 'facebook', url: 'https://www.facebook.com/share/1AE8vYALPP/' },
+          { type: 'whatsapp', url: 'https://wa.me/5515991537174' },
+          { type: 'whatsapp2', url: 'https://wa.me/5515996541847' },
+          
+          
+        ]
+      }
     ]
   },
   {
@@ -497,6 +542,25 @@ export const categories = [
     id: '67',
     name: "Pet Shop",
     businesses: [
+      {
+        id: '67',
+        name: 'Fran Pet',
+        images: [
+          'https://abrir.link/WFNbH',
+        ],
+        address: 'Rua das Flores, 123',
+        phone: '+55 15997448363',
+        tel: '15 99744-8363',
+        hours: 'Seg-Sex: 08h às 18h\nSáb: 08h às 13h\nDom: Fechado',
+        description: 'Cuidado com seu animalzinho.',
+        socialMedia: [
+          { type: 'instagram', url: 'https://www.instagram.com/franpet.banhoetosa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
+          { type: 'facebook', url: 'https://www.facebook.com/share/1B6UDBHWUU' },
+          { type: 'whatsapp', url: 'https://wa.me/5515997448363' },
+          { type: 'maps', url: 'https://maps.app.goo.gl/GNM7T12JDGoVo6yE8'},
+          
+        ]
+      }
      
     ]
   },
@@ -518,6 +582,24 @@ export const categories = [
     id: '70',
     name: "Posto de Combustível",
     businesses: [
+      {
+        id: '71',
+        name: 'Auto Posto San Marino Avenida',
+        images: [
+          'https://abrir.link/MEYHE',
+        ],
+        address: 'Avenida Antônio Pires de Almeida 1803',
+        phone: '+55 15992724348',
+        tel: '15 99242-4348',
+        hours: 'Seg-Sex: 05h às 22\nSáb: 06h às 22h\nDom: 07h às 21h',
+        description: 'Mais que uma opção, uma diferença.',
+        socialMedia: [
+          { type: 'facebook', url: 'https://www.facebook.com/share/1A6s54Rm84/' },
+          { type: 'whatsapp', url: 'https://wa.me/5515992724348' },
+          { type: 'maps', url: 'https://www.google.com/maps/place/Auto+Posto+San+Marino+Avenida/@-23.2258059,-47.5204268,17z/data=!3m1!4b1!4m6!3m5!1s0x94c5fe708eed6259:0x93a6e4f7f223352d!8m2!3d-23.2258059!4d-47.5204268!16s%2Fg%2F1ptz79nk2?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D'},
+          
+        ]
+      }
      
     ]
   },

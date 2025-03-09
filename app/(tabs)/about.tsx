@@ -1,17 +1,20 @@
 import { View, Text, StyleSheet, Image, ScrollView, Linking } from 'react-native';
 import { Mail, Phone, MapPin, Globe } from 'lucide-react-native';
+import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 export default function AboutScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={{ uri: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800' }}
-          style={styles.headerImage}
+          source={require("../../assets/images/LogoGuiaMais.png")}
+          style={{
+            width: hp(27),
+            height: hp(10),
+          }}
         />
         <View style={styles.overlay}>
-          <Text style={styles.title}>CityGuide</Text>
-          <Text style={styles.subtitle}>Seu guia local de confiança</Text>
+          
         </View>
       </View>
 
@@ -44,8 +47,8 @@ export default function AboutScreen() {
             <Phone size={20} color="#ff5e00" />
             <Text 
               style={styles.contactText}
-              onPress={() => Linking.openURL('tel:+551199999999')}>
-              (11) 9999-9999
+              onPress={() => Linking.openURL('tel:+5515997949834')}>
+              (15) 99794-9834
             </Text>
           </View>
           <View style={styles.contactItem}>
@@ -53,23 +56,23 @@ export default function AboutScreen() {
             <Text 
               style={styles.contactText}
               onPress={() => Linking.openURL('mailto:contato@cityguide.com')}>
-              contato@cityguide.com
+              appguiamais.pf@gmail.com
             </Text>
           </View>
           <View style={styles.contactItem}>
             <MapPin size={20} color="#ff5e00" />
             <Text style={styles.contactText}>
-              Av. Paulista, 1000 - São Paulo, SP
+              Residencial São Mateus 336 Porto Feliz, SP
             </Text>
           </View>
-          <View style={styles.contactItem}>
+          {/*<View style={styles.contactItem}>
             <Globe size={20} color="#ff5e00" />
             <Text 
               style={styles.contactText}
               onPress={() => Linking.openURL('https://cityguide.com')}>
               www.cityguide.com
             </Text>
-          </View>
+          </View>*/}
         </View>
       </View>
     </ScrollView>
@@ -84,6 +87,8 @@ const styles = StyleSheet.create({
   header: {
     height: 200,
     position: 'relative',
+    alignItems:"center",
+    justifyContent:'center',
   },
   headerImage: {
     width: '100%',

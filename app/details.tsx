@@ -132,6 +132,10 @@ export default function DetailsScreen() {
         icon = <MessageCircle size={35} color="#25D366" />;
         color = '#25D366';
         break;
+        case 'whatsapp2':
+          icon = <MessageCircle size={35} color="#25D366" />;
+          color = '#25D366';
+          break;
       case 'maps':
         icon = <Image source={require("../assets/images/Maps.png")} style={{ width: 35, height: 35 }} />;
         color = '#25D366';
@@ -220,14 +224,25 @@ export default function DetailsScreen() {
 
           <View style={styles.infoSection}>
 
-            
+             
             {hasData(business.phone) && (
               <View style={styles.infoItem}>
-                <Phone size={35} color="#0891b2" />
+                <Phone size={30} color="#0891b2" />
                 <Text 
                   style={[styles.infoPhoneText, styles.link]}
                   onPress={() => Linking.openURL(`tel:${business.phone}`)}>
-                  {business.phone}
+                  {business.tel}
+                </Text>
+              </View>
+            )}
+
+            {hasData(business.phone2) && (
+              <View style={styles.infoItem}>
+                <Phone size={30} color="#0891b2" />
+                <Text 
+                  style={[styles.infoPhoneText, styles.link]}
+                  onPress={() => Linking.openURL(`tel2:${business.phone2}`)}>
+                  {business.tel2}
                 </Text>
               </View>
             )}
@@ -369,6 +384,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   infoSection: {
+    width:"auto",
     backgroundColor: 'white',
     padding: 16,
     borderRadius: 12,
@@ -385,10 +401,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   infoPhoneText:{
-    fontSize: 20,
+    fontSize: 25,
   },
   link: {
     color: '#0891b2',
-    textDecorationLine: 'underline',
   },
 });
