@@ -3,7 +3,7 @@ export const categories = [
     id: '1', 
     name: 'Academia', 
     businesses: [
-      {
+      /*{
         id: '1',
         name: 'Restaurante Sabor & Arte',
         images: [
@@ -23,7 +23,7 @@ export const categories = [
           { type: 'maps', url: 'https://maps.app.goo.gl/tC1CcN4GJT5eKZ3t6'},
           
         ]
-      }
+      }*/
     ]
   },
   {
@@ -136,6 +136,22 @@ export const categories = [
     id: '161',
     name: "Bebida",
     businesses: [
+      {
+        id: '161.1',
+        name: 'Adega dos Amigos',
+        images: [
+          
+        ],
+        address: 'Rua Armando Sales de Oliveira',
+        phone: '+55 15 99614-6707',
+        tel: '15 99614-6707',
+        hours: 'Seg-Sex: 08 às 22h\nSáb-Dom: 08h às 20h',
+        description: 'Bedidas em geral.',
+        socialMedia: [
+        
+          
+        ]
+      }
      
     ]
   },
@@ -221,10 +237,12 @@ export const categories = [
     name: "Comida",
     businesses: [
       {
-        id: '2711',
+        id: '271.1',
         name: 'Pizzaria Surreal',
         images: [
           'https://encurtador.com.br/VMqyc',
+          'https://encurtador.com.br/ow1lL',
+          'https://encurtador.com.br/FQRo6',
         ],
         address: 'Rua Newton Prado 535',
         phone: '+55 15996552341',
@@ -268,7 +286,7 @@ export const categories = [
     name: "Doces e Salgados",
     businesses: [
       {
-        id: '311',
+        id: '31.1',
         name: 'Jô Bolos',
         images: [
           'https://encurtador.com.br/86GAI',
@@ -543,7 +561,7 @@ export const categories = [
     name: "Pet Shop",
     businesses: [
       {
-        id: '67',
+        id: '67.1',
         name: 'Fran Pet',
         images: [
           'https://abrir.link/WFNbH',
@@ -583,7 +601,7 @@ export const categories = [
     name: "Posto de Combustível",
     businesses: [
       {
-        id: '71',
+        id: '71.1',
         name: 'Auto Posto San Marino Avenida',
         images: [
           'https://abrir.link/MEYHE',
